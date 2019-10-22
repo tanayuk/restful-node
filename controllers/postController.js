@@ -1,14 +1,14 @@
 const validationHandler = require("../validations/validationHandler");
 
-exports.index = (req,res)=>{
-    res.send({message: "hi"});
+exports.index = (req, res) => {
+    res.send({ message: "hi" });
 };
 
-exports.store = (req, res, next) =>{
-    try{
+exports.store = (req, res, next) => {
+    try {
         validationHandler(req);
-        res.send({message: "The name is " + req.body.name});
-    }catch(err){
+        res.send({ message: "The name is " + req.body.name });
+    } catch (err) {
         next(err)
     }
 };
